@@ -1,0 +1,14 @@
+<div class="ui accordion styled">
+    <!-- use ng-container here, because we don't need any wrapper or container element in the UI 
+    => ng-container is not visible -->
+    <ng-container *ngFor="let item of items; let i = index">
+        <div [ngClass]="{ active: i === openedItemIndex }" class="title" (click)="onClick(i)">
+            <i class="dropdown icon"></i>
+            {{ item.title }}
+        </div>
+        <!-- if the current item equals the openedItemIndex, apply the class 'active' -->
+        <div [ngClass]="{ active: i === openedItemIndex }" class="content">
+            <p>{{ item.content }}</p>
+        </div>
+    </ng-container>
+</div>

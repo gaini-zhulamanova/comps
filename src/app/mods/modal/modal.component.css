@@ -1,0 +1,12 @@
+/* if there is an element with the class .actions and has no childs, show the default element */
+.actions:empty {
+    display: none;
+}
+
+.actions-default {
+    display: none;
+}
+
+.actions:empty + .actions-default {
+    display: block;
+}
